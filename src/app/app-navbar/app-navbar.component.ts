@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app-navbar.component.css']
 })
 export class AppNavbarComponent implements OnInit {
+  isCollapsed = true;
 
-  constructor() { }
+  constructor() {
+  }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    // throw new Error('Method not implemented.');
+  }
+
+  toggleMenu() {
+    this.isCollapsed = !this.isCollapsed;
   }
 
 }
