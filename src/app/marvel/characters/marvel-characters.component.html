@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Marvel characters</h2>
+
+  <input type="text" [(ngModel)]="filterName" placeholder="Enter start of character name">
+  <button (click)="getCharacters()">Get Chars</button>
+  <!--<span>{{generatedUrl}}</span>-->
+  <ng-container *ngFor="let char of characters">
+    <div class="list-group-item">
+
+      <img src="{{char.thumbnail.path}}/portrait_small.{{char.thumbnail.extension}}"/>
+      {{char.name}}
+
+      <ng-container *ngFor="let url of char.urls">
+        <a target="_blank" href="{{url.url}}" class="btn btn-primary">
+          {{url.type}}
+        </a>
+      </ng-container>
+    </div>
+  </ng-container>
+
+</div>
