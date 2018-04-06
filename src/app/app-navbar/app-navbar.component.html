@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #607D8B;">
+<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #607D8B; margin-bottom: 20px;">
   <a class="navbar-brand" href="#">
     <img src="/assets/images/angular.svg" width="30" height="30" class="d-inline-block align-top" alt="">
     Tour of Heroes</a>
@@ -8,9 +8,12 @@
   </button>
   <div class="collapse navbar-collapse" id="appNavigation" [ngbCollapse]="isCollapsed">
     <div class="navbar-nav mr-auto">
-      <a class="nav-item nav-link" routerLink="" routerLinkActive="active">Home</a>
-      <!--<a class="nav-item nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>-->
+      <a class="nav-item nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
       <a class="nav-item nav-link" routerLink="/heroes" routerLinkActive="active">Heroes</a>
+      <a class="nav-item nav-link" routerLink="/bootstrap-containers" routerLinkActive="active">Containers</a>
+      <a class="nav-item nav-link" routerLink="/bootstrap-jumbotron" routerLinkActive="active">Jumbotron</a>
+      <a class="nav-item nav-link" routerLink="/marvel-characters"
+         routerLinkActive="active">Marvel Characters</a>
     </div>
 
   </div>

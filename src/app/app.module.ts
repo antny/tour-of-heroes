@@ -13,8 +13,12 @@ import {AppRoutingModule} from './/app-routing.module';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
-import {InMemoryDataService} from './in-memory-data.service';
+// import {InMemoryDataService} from './in-memory-data.service';
 import {AppNavbarComponent} from './app-navbar/app-navbar.component';
+import {BootstrapContainersComponent} from './bootstrap/containers/bootstrap-containers.component';
+import {BootstrapJumbotronComponent} from './bootstrap/jumbotron/bootstrap-jumbotron.component';
+import {MarvelCharactersComponent} from './marvel/characters/marvel-characters.component';
+import {MarvelCharactersService} from './services/marvel-characters.service';
 
 @NgModule({
   declarations: [
@@ -23,23 +27,26 @@ import {AppNavbarComponent} from './app-navbar/app-navbar.component';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    AppNavbarComponent
+    AppNavbarComponent,
+    BootstrapContainersComponent,
+    BootstrapJumbotronComponent,
+    MarvelCharactersComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     NgbModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule
 
 // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
 // and returns simulated server responses.
 // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {dataEncapsulation: false}
-    )
+//     HttpClientInMemoryWebApiModule.forRoot(
+//       InMemoryDataService, {dataEncapsulation: false}
+//     )
   ],
-  providers: [HeroService, MessageService],
+  providers: [HeroService, MessageService, MarvelCharactersService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
