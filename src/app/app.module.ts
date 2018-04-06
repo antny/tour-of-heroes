@@ -18,7 +18,8 @@ import {AppNavbarComponent} from './app-navbar/app-navbar.component';
 import {BootstrapContainersComponent} from './bootstrap/containers/bootstrap-containers.component';
 import {BootstrapJumbotronComponent} from './bootstrap/jumbotron/bootstrap-jumbotron.component';
 import {MarvelCharactersComponent} from './marvel/characters/marvel-characters.component';
-import {MarvelCharactersService} from './services/marvel-characters.service';
+import {MarvelRepositoryService} from './services/marvel-characters.service';
+import {MarvelComicsComponent} from './marvel/comics/marvel-comics.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {MarvelCharactersService} from './services/marvel-characters.service';
     AppNavbarComponent,
     BootstrapContainersComponent,
     BootstrapJumbotronComponent,
-    MarvelCharactersComponent
+    MarvelCharactersComponent,
+    MarvelComicsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,7 @@ import {MarvelCharactersService} from './services/marvel-characters.service';
 //       InMemoryDataService, {dataEncapsulation: false}
 //     )
   ],
-  providers: [HeroService, MessageService, MarvelCharactersService],
+  providers: [HeroService, MessageService, MarvelRepositoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

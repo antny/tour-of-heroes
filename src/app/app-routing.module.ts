@@ -3,9 +3,10 @@ import {RouterModule, Routes} from '@angular/router';
 import {HeroesComponent} from './heroes/heroes.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {HeroDetailComponent} from './hero-detail/hero-detail.component';
-import {BootstrapContainersComponent} from "./bootstrap/containers/bootstrap-containers.component";
-import {BootstrapJumbotronComponent} from "./bootstrap/jumbotron/bootstrap-jumbotron.component";
-import {MarvelCharactersComponent} from "./marvel/characters/marvel-characters.component";
+import {BootstrapContainersComponent} from './bootstrap/containers/bootstrap-containers.component';
+import {BootstrapJumbotronComponent} from './bootstrap/jumbotron/bootstrap-jumbotron.component';
+import {MarvelCharactersComponent} from './marvel/characters/marvel-characters.component';
+import {MarvelComicsComponent} from './marvel/comics/marvel-comics.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'heroes', component: HeroesComponent},
   {path: 'bootstrap-containers', component: BootstrapContainersComponent},
   {path: 'bootstrap-jumbotron', component: BootstrapJumbotronComponent},
-  {path: 'marvel-characters', component: MarvelCharactersComponent}
+  {path: 'marvel-characters', component: MarvelCharactersComponent},
+  {path: 'marvel-comics', component: MarvelComicsComponent}
 ];
 
 

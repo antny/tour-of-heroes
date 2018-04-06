@@ -1,18 +1,17 @@
 import {Component, OnInit} from '@angular/core';
-import {MarvelCharactersService} from '../../services/marvel-characters.service';
+import {MarvelRepositoryService} from '../../services/marvel-characters.service';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   templateUrl: './marvel-characters.component.html'
 })
-export class MarvelCharactersComponent implements OnInit {
+export class MarvelCharactersComponent implements   OnInit {
 
   generatedHash = '';
-  generatedUrl = '';
   characters: any[] = [];
   filterName = '';
 
-  constructor(private characterService: MarvelCharactersService,
+  constructor(private characterService: MarvelRepositoryService,
               private httpClient: HttpClient) {
   }
 
@@ -20,13 +19,11 @@ export class MarvelCharactersComponent implements OnInit {
   }
 
   refreshHash() {
-    this.generatedHash = this.characterService.getHash(this.characterService.getTs());
+    this.generatedHash = this.characterService.getHash(this.characterService.getTimeString());
   }
 
   getCharacters() {
-    this.generatedUrl = this.characterService.getUrl(this.filterName);
-
-    this.characterService.getCharacters(this.filterName)
+    this.characterService.getCharactersStartingWith(this.filterName)
       .subscribe((result) => {
           this.characters = result.data.results;
 
